@@ -73,11 +73,11 @@
  * If no ancestor relationship:
  * arbitrary, since it's serialized on rename_lock
  */
-static int sysctl_vfs_cache_pressure __read_mostly = 100;
+static int sysctl_vfs_cache_pressure __read_mostly = 50;
 
 unsigned long vfs_pressure_ratio(unsigned long val)
 {
-	return mult_frac(val, sysctl_vfs_cache_pressure, 100);
+	return mult_frac(val, sysctl_vfs_cache_pressure, 50);
 }
 EXPORT_SYMBOL_GPL(vfs_pressure_ratio);
 
